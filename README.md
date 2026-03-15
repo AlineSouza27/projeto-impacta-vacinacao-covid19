@@ -123,14 +123,6 @@ LIMIT 100;
 
 ---
 
-## ✅ Próximos passos
-1. Valide as colunas no dicionário de dados.
-2. Crie views para cada aba do dashboard (macro, vacinação, paciente, estabelecimento).
-3. Conecte a ferramenta de BI diretamente ao BigQuery.
-4. Documente regras de negócio (ex.: definição de cobertura, dose de reforço).
-
----
-
 ## 📎 Referências
 - Dataset Base dos Dados: https://basedosdados.org
 - BigQuery: https://cloud.google.com/bigquery
