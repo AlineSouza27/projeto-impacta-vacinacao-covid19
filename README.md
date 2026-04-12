@@ -118,7 +118,7 @@ LIMIT 100;
 ## ✅ Checklist de atividades por aba
 - [x] Macro (Visão Geral): consolidar KPIs e confirmar a modelagem de métricas macro.
 - [ ] Detalhamento: Vacinação – elaborar query/view de doses por tipo, fabricante, idade e UF.
-- [ ] Detalhamento: Paciente – criar query/view de perfil/população vacinada (idade, sexo, raça, comorbidade).
+- [x] Detalhamento: Paciente – criar query/view de perfil/população vacinada (idade, sexo, raça, comorbidade).
 - [ ] Detalhamento: Estabelecimento – implementar query/view por unidade/município e volume de doses.
 
 ---
