@@ -14,6 +14,7 @@ SELECT
 
     -- Dados do paciente (campo exclusivo da tabela paciente)
     pacientes.sigla_uf_endereco             AS uf_endereco_paciente,
+    dicionario.valor                        AS grupo_atendimento,
     pacientes.sexo,
     pacientes.idade,
     pacientes.raca_cor,
@@ -21,8 +22,14 @@ SELECT
     pacientes.nacionalidade
 
 FROM basedosdados.br_ms_vacinacao_covid19.microdados AS microdados
+
 LEFT JOIN basedosdados.br_ms_vacinacao_covid19.microdados_paciente AS pacientes
   ON microdados.id_paciente = pacientes.id_paciente
+
+LEFT JOIN basedosdados.br_ms_vacinacao_covid19.dicionario AS dicionario
+  ON  microdados.grupo_atendimento_vacina = dicionario.chave
+  AND dicionario.nome_coluna = 'grupo_atendimento'
+
 
 
 
