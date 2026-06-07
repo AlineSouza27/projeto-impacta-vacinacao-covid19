@@ -119,7 +119,7 @@ LIMIT 100;
 - [x] Macro (Visão Geral): consolidar KPIs e confirmar a modelagem de métricas macro.
 - [x] Detalhamento: Vacinação – elaborar query/view de doses por tipo, fabricante, idade e UF.
 - [x] Detalhamento: Paciente – criar query/view de perfil/população vacinada (idade, sexo, raça, comorbidade).
-- [ ] Detalhamento: Estabelecimento – implementar query/view por unidade/município e volume de doses.
+- [x] Detalhamento: Estabelecimento – implementar query/view por unidade/município e volume de doses.
 
 ---
 
