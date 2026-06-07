@@ -127,3 +127,4 @@ LIMIT 100;
 - Dataset Base dos Dados: https://basedosdados.org
 - BigQuery: https://cloud.google.com/bigquery
 - Looker Studio: https://lookerstudio.google.com
+- QuickDatabase: https://app.quickdatabasediagrams.com

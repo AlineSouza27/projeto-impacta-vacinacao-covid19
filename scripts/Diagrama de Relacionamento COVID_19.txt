@@ -1,0 +1,104 @@
+# Schema - Vacinação COVID-19
+# Base: basedosdados.br_ms_vacinacao_covid19
+
+microdados
+-
+sigla_uf string
+id_documento PK string
+id_paciente string INDEX
+idade_paciente int
+data_nascimento_paciente date
+sexo_paciente string
+raca_cor_paciente string
+id_municipio_endereco_paciente string
+pais_endereco_paciente string
+cep_endereco_paciente string
+nacionalidade_paciente string
+id_estabelecimento string INDEX
+razao_social_estabelecimento string
+nome_fantasia_estabelecimento string
+id_municipio_estabelecimento string
+grupo_atendimento_vacina string INDEX
+categoria_vacina string
+lote_vacina string INDEX
+nome_fabricante_vacina string
+referencia_fabricante_vacina string
+data_aplicacao_vacina date
+dose_vacina string
+codigo_vacina string
+data_importacao_rnds date
+sistema_origem string
+
+microdados_paciente
+-
+id_paciente PK string
+idade int
+data_nascimento date
+sexo string
+raca_cor string INDEX
+id_municipio_endereco string
+pais_endereco string
+sigla_uf_endereco string
+cep_endereco string
+nacionalidade string
+
+microdados_estabelecimento
+-
+id_estabelecimento PK string
+sigla_uf string
+id_municipio string
+razao_social string
+nome_fantasia string
+
+dicionario
+-
+chave PK string
+nome_coluna PK string
+valor string
+
+# Tabelas analíticas sobre lotes das vacinas aplicadas
+
+dados_lote_total_doses
+----
+lote_vacina PK string FK >- microdados.lote_vacina
+nome_fabricante_vacina PK string FK >- microdados.nome_fabricante_vacina
+total_doses_aplicadas int
+
+dados_lote_por_fabricante
+----
+nome_fabricante_vacina PK string FK >- microdados.nome_fabricante_vacina
+total_lotes int
+total_doses int
+
+dados_lote_periodo_utilizacao
+----
+lote_vacina PK string FK >- microdados.lote_vacina
+nome_fabricante_vacina PK string FK >- microdados.nome_fabricante_vacina
+primeira_aplicacao date
+ultima_aplicacao date
+dias_em_uso int
+
+dados_lote_por_uf
+----
+sigla_uf PK string FK >- microdados.sigla_uf
+nome_fabricante_vacina PK string FK >- microdados.nome_fabricante_vacina
+total_lotes int
+total_doses int
+
+dados_pct
+----
+id_paciente string FK >- microdados_paciente.id_paciente
+data_aplicacao_vacina date
+dose_vacina string
+nome_fabricante_vacina string
+uf_vacinacao string
+id_estabelecimento string FK >- microdados_estabelecimento.id_estabelecimento
+razao_social_estabelecimento string
+uf_endereco_paciente string
+grupo_atendimento string FK >- dicionario.valor
+raca_descricao string FK >- dicionario.valor
+sexo string
+idade int
+raca_cor string
+id_municipio_endereco string
+nacionalidade string
